@@ -29,7 +29,6 @@ namespace CinemaApp.Views
             this.Dock = DockStyle.Fill;
 
             tabFilmScheduleControl.TabPages.Remove(tabFilmScheduleDetail);
-            btnClose.Click += delegate { this.Close(); };
 
             IEnumerable<MovieModel> movies = new MovieRepository(new CinemaAppContext()).GetAllMovies();
 
@@ -126,6 +125,8 @@ namespace CinemaApp.Views
         public int Id { get => this.id; set => this.id = value; }
         public string SearchFilmScheduleValue { get => this.txtSearchMovie.Text; set => this.txtSearchMovie.Text = value; }
 
+        public static int InstanceInitializeCount { get; set; } = 0;
+
         public void SetMovieComboBox(IEnumerable<MovieModel> movies)
         {
             cbMovie.DataSource = null;
@@ -152,6 +153,7 @@ namespace CinemaApp.Views
 
         public static FilmScheduleView GetInstance(Form parent)
         {
+            InstanceInitializeCount++;
             if (instance == null || instance.IsDisposed)
             {
                 instance = new FilmScheduleView(parent);

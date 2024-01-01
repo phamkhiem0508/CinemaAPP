@@ -48,7 +48,6 @@
             tabFilmScheduleDetail = new TabPage();
             cbRoom = new ComboBox();
             label2 = new Label();
-            btnClose = new Button();
             panel1 = new Panel();
             lbMovie = new Label();
             tabFilmScheduleList.SuspendLayout();
@@ -260,18 +259,8 @@
             label2.TabIndex = 13;
             label2.Text = "Room";
             // 
-            // btnClose
-            // 
-            btnClose.Location = new Point(764, 9);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(24, 23);
-            btnClose.TabIndex = 12;
-            btnClose.Text = "X";
-            btnClose.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
-            panel1.Controls.Add(btnClose);
             panel1.Controls.Add(lbMovie);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -328,7 +317,6 @@
         private Label lbSearchMovie;
         private TabControl tabFilmScheduleControl;
         private TabPage tabFilmScheduleDetail;
-        private Button btnClose;
         private Panel panel1;
         private Label lbMovie;
         private ComboBox cbRoom;

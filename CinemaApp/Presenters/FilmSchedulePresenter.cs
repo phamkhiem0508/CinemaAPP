@@ -31,14 +31,20 @@ namespace CinemaApp.Presenters
             filmBindingSource = new BindingSource();
             filmList = new List<FilmScheduleModel>();
 
-            view.AddFilmScheduleEvent += AddFilmSchedule;
-            view.SaveFilmScheduleEvent += SaveFilmSchedule;
-            view.EditFilmScheduleEvent += EditFilmSchedule;
-            view.SearchFilmScheduleEvent += SearchFilmSchedule;
-            view.DeleteFilmScheduleEvent += DeleteFilmSchedule;
-            view.CloseFormEvent += CloseFormEvent;
+            //Console.WriteLine("FilmSchedule Instance count: " + FilmScheduleView.InstanceInitializeCount);
+
+            //if(FilmScheduleView.InstanceInitializeCount == 1)
+            //{
+                view.AddFilmScheduleEvent += AddFilmSchedule;
+                view.SaveFilmScheduleEvent += SaveFilmSchedule;
+                view.EditFilmScheduleEvent += EditFilmSchedule;
+                view.SearchFilmScheduleEvent += SearchFilmSchedule;
+                view.DeleteFilmScheduleEvent += DeleteFilmSchedule;
+                view.CloseFormEvent += CloseFormEvent;
+            //}
 
             LoadFilmSchedule();
+
             this.view.SetMovieListBindingSource(filmBindingSource);
 
             SetMovieComboBox();

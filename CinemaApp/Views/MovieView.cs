@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,7 +31,6 @@ namespace CinemaApp.Views
 
             PrepareAndRaiseEvent();
             tabMovieControl.TabPages.Remove(tabMovieDetail);
-            btnClose.Click += delegate { this.Close(); };
             cbGenre.SelectedIndex = 0;
         }
 
@@ -86,8 +86,6 @@ namespace CinemaApp.Views
                 tabMovieControl.TabPages.Add(tabMovieList);
                 tabMovieControl.SelectedTab = tabMovieList;
                 tabMovieList.Text = "Movie List";
-
-
             };
 
             //Delete movie
@@ -164,8 +162,10 @@ namespace CinemaApp.Views
         //Singleton pattern
         private static MovieView instance = null;
 
+        public static int InstanceInitializeCount { get; set; } = 0;
         public static MovieView GetInstance(Form parent)
         {
+            InstanceInitializeCount++;
             if (instance == null || instance.IsDisposed)
             {
                 instance = new MovieView(parent);

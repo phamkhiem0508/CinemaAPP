@@ -30,7 +30,6 @@
         {
             lbMovie = new Label();
             panel1 = new Panel();
-            btnClose = new Button();
             tabMovieControl = new TabControl();
             tabMovieList = new TabPage();
             btnDeleteMovie = new Button();
@@ -72,22 +71,12 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btnClose);
             panel1.Controls.Add(lbMovie);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 42);
             panel1.TabIndex = 1;
-            // 
-            // btnClose
-            // 
-            btnClose.Location = new Point(764, 9);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(24, 23);
-            btnClose.TabIndex = 12;
-            btnClose.Text = "X";
-            btnClose.UseVisualStyleBackColor = true;
             // 
             // tabMovieControl
             // 
@@ -351,7 +340,6 @@
         private Label label4;
         private MaskedTextBox txtMovieDuration;
         private Button btnSaveMovie;
-        private Button btnClose;
         private Label lbMovieGenre;
         private Button btnCloseMovie;
         private ComboBox cbGenre;

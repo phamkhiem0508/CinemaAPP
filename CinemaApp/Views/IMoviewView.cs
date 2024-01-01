@@ -26,6 +26,8 @@ namespace CinemaApp.Views
 
         bool IsEdit { get; set; }
 
+        static int InstanceInitializeCount { get; set; }
+
 
         //Events
         event EventHandler AddMovieEvent;

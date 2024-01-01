@@ -24,6 +24,8 @@ namespace CinemaApp.Views
 
         string SearchFilmScheduleValue { get; set; }
 
+        static int InstanceInitializeCount { get; set; }
+
         //Events
         event EventHandler AddFilmScheduleEvent;
         event EventHandler EditFilmScheduleEvent;

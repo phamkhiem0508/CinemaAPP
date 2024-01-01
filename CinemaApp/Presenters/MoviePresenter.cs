@@ -31,14 +31,21 @@ namespace CinemaApp.Presenters
 
             //Subscribe to view events
 
-            this.view.SearchMovieEvent += SearchMovie;
-            this.view.GetAllMoviesEvent += GetAllMovies;
-            this.view.AddMovieEvent += AddMovie;
-            this.view.DeleteMovieEvent += DeleteMovie;
-            this.view.UpdateMovieEvent += UpdateMovie;
-            this.view.SaveMovieEvent += SaveMovie;
-            this.view.CancelSaveMovieEvent += CancelSaveMovie;
-            this.view.EditMovieEvent += EditMovie;
+            //Console.WriteLine("Movie Instance count: " + MovieView.InstanceInitializeCount);
+
+            //if(MovieView.InstanceInitializeCount == 1)
+            //{
+                this.view.SearchMovieEvent += SearchMovie;
+                this.view.GetAllMoviesEvent += GetAllMovies;
+                this.view.AddMovieEvent += AddMovie;
+                this.view.DeleteMovieEvent += DeleteMovie;
+                this.view.UpdateMovieEvent += UpdateMovie;
+                this.view.SaveMovieEvent += SaveMovie;
+                this.view.CancelSaveMovieEvent += CancelSaveMovie;
+                this.view.EditMovieEvent += EditMovie;
+           //}
+
+
 
             LoadAllMovieList();
 
@@ -160,13 +167,8 @@ namespace CinemaApp.Presenters
 
         private void CancelSaveMovie(object sender, EventArgs e)
         {
+            Console.WriteLine("Cancel save movie");
             LoadAllMovieList();
         }
-
-
-
-
-
-
     }
 }
