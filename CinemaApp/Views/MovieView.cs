@@ -81,7 +81,7 @@ namespace CinemaApp.Views
                 tabMovieControl.TabPages.Add(tabMovieList);
                 tabMovieControl.SelectedTab = tabMovieList;
                 tabMovieList.Text = "Movie List";
-                
+
 
             };
 

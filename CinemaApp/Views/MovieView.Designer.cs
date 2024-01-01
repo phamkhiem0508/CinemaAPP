@@ -204,7 +204,7 @@
             // cbGenre
             // 
             cbGenre.FormattingEnabled = true;
-            cbGenre.Items.AddRange(new object[] { "Action", "Kid" });
+            cbGenre.Items.AddRange(new object[] { "Action", "Kid", "Comedy", "Romance", "Drama", "Adventure" });
             cbGenre.Location = new Point(156, 165);
             cbGenre.Name = "cbGenre";
             cbGenre.Size = new Size(161, 23);

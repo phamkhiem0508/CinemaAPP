@@ -201,6 +201,7 @@ namespace CinemaApp.Presenters
 
                 new Utilities.ModelDataValidation().Validate(model);
 
+                Console.WriteLine("No error");
                 if (view.IsEdit)
                 {
                     Console.WriteLine("Update");
