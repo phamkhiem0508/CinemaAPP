@@ -27,7 +27,9 @@ namespace CinemaApp.Presenters
 
         private void ShowMoviesView(object sender, EventArgs e)
         {
-            IMovieView movieView = MovieView.GetInstance((Form)mainView);
+
+            //IMovieView movieView = MovieView.GetInstance((Form)mainView);
+            IMovieView movieView = new MovieView((Form)mainView);
             IMovieRepository movieRepository = new MovieRepository( new CinemaAppContext());
             new MoviePresenter(movieRepository,movieView);
 
@@ -35,7 +37,8 @@ namespace CinemaApp.Presenters
 
         private void ShowCinemaView(object sender, EventArgs e)
         {
-           IFilmScheduleView filmScheduleView = FilmScheduleView.GetInstance((Form)mainView);
+           //IFilmScheduleView filmScheduleView = FilmScheduleView.GetInstance((Form)mainView);
+           IFilmScheduleView filmScheduleView = new FilmScheduleView((Form)mainView);
            IFilmScheduleRepository filmScheduleRepository = new FilmScheduleRepository(new CinemaAppContext());
            new FilmSchedulePresenter(filmScheduleView,filmScheduleRepository);
         }

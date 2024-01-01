@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            btnMovies = new Button();
             btnCinemaList = new Button();
+            btnMovies = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,6 +44,15 @@
             panel1.Size = new Size(200, 450);
             panel1.TabIndex = 0;
             // 
+            // btnCinemaList
+            // 
+            btnCinemaList.Location = new Point(0, 41);
+            btnCinemaList.Name = "btnCinemaList";
+            btnCinemaList.Size = new Size(200, 44);
+            btnCinemaList.TabIndex = 1;
+            btnCinemaList.Text = "Cinema";
+            btnCinemaList.UseVisualStyleBackColor = true;
+            // 
             // btnMovies
             // 
             btnMovies.Location = new Point(0, 0);
@@ -54,15 +63,6 @@
             btnMovies.UseVisualStyleBackColor = true;
             btnMovies.Click += btnMovies_Click;
             // 
-            // btnCinemaList
-            // 
-            btnCinemaList.Location = new Point(0, 41);
-            btnCinemaList.Name = "btnCinemaList";
-            btnCinemaList.Size = new Size(200, 44);
-            btnCinemaList.TabIndex = 1;
-            btnCinemaList.Text = "Cinema";
-            btnCinemaList.UseVisualStyleBackColor = true;
-            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -71,6 +71,7 @@
             Controls.Add(panel1);
             IsMdiContainer = true;
             Name = "MainView";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "MainView";
             panel1.ResumeLayout(false);
             ResumeLayout(false);

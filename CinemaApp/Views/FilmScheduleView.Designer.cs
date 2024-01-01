@@ -31,7 +31,7 @@
             cbMovie = new ComboBox();
             btnCloseFilmScheduleDetail = new Button();
             lbMovieGenre = new Label();
-            btnSaveMovie = new Button();
+            btnSaveFilmSchedule = new Button();
             txtFilmScheduleDate = new MaskedTextBox();
             label4 = new Label();
             txtFilmScheduleStartime = new MaskedTextBox();
@@ -86,15 +86,15 @@
             lbMovieGenre.TabIndex = 9;
             lbMovieGenre.Text = "Movie";
             // 
-            // btnSaveMovie
+            // btnSaveFilmSchedule
             // 
-            btnSaveMovie.Location = new Point(149, 240);
-            btnSaveMovie.Name = "btnSaveMovie";
-            btnSaveMovie.Size = new Size(75, 23);
-            btnSaveMovie.TabIndex = 8;
-            btnSaveMovie.Text = "Save";
-            btnSaveMovie.TextImageRelation = TextImageRelation.ImageAboveText;
-            btnSaveMovie.UseVisualStyleBackColor = true;
+            btnSaveFilmSchedule.Location = new Point(149, 240);
+            btnSaveFilmSchedule.Name = "btnSaveFilmSchedule";
+            btnSaveFilmSchedule.Size = new Size(75, 23);
+            btnSaveFilmSchedule.TabIndex = 8;
+            btnSaveFilmSchedule.Text = "Save";
+            btnSaveFilmSchedule.TextImageRelation = TextImageRelation.ImageAboveText;
+            btnSaveFilmSchedule.UseVisualStyleBackColor = true;
             // 
             // txtFilmScheduleDate
             // 
@@ -229,7 +229,7 @@
             tabFilmScheduleDetail.Controls.Add(cbMovie);
             tabFilmScheduleDetail.Controls.Add(btnCloseFilmScheduleDetail);
             tabFilmScheduleDetail.Controls.Add(lbMovieGenre);
-            tabFilmScheduleDetail.Controls.Add(btnSaveMovie);
+            tabFilmScheduleDetail.Controls.Add(btnSaveFilmSchedule);
             tabFilmScheduleDetail.Controls.Add(txtFilmScheduleDate);
             tabFilmScheduleDetail.Controls.Add(label4);
             tabFilmScheduleDetail.Controls.Add(txtFilmScheduleStartime);
@@ -313,7 +313,7 @@
         private ComboBox cbMovie;
         private Button btnCloseFilmScheduleDetail;
         private Label lbMovieGenre;
-        private Button btnSaveMovie;
+        private Button btnSaveFilmSchedule;
         private MaskedTextBox txtFilmScheduleDate;
         private Label label4;
         private MaskedTextBox txtFilmScheduleStartime;

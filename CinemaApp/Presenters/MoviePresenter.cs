@@ -30,6 +30,7 @@ namespace CinemaApp.Presenters
             movieList = new List<MovieModel>();
 
             //Subscribe to view events
+
             this.view.SearchMovieEvent += SearchMovie;
             this.view.GetAllMoviesEvent += GetAllMovies;
             this.view.AddMovieEvent += AddMovie;
@@ -91,7 +92,14 @@ namespace CinemaApp.Presenters
 
         private void AddMovie(object sender, EventArgs e)
         {
-            //repository.AddMovie(new MovieModel({ Mvoew});
+
+            //Reset default value
+            this.view.MovieTitle = "";
+            this.view.MovieDescription = "";
+            this.view.MovieDuration = "";
+            this.view.MovieReleaseDate = "";
+            this.view.MovieGenre = "";
+            this.view.MovieImage = "";
         }
 
         private void DeleteMovie(object sender, EventArgs e)
@@ -122,13 +130,15 @@ namespace CinemaApp.Presenters
             var model = new MovieModel();
             model.Title = this.view.MovieTitle;
             model.Description = this.view.MovieDescription;
-            model.Duration = this.view.MovieDuration;
-            model.ReleaseDate = this.view.MovieReleaseDate;
+            model.Duration = this.view.MovieDuration.Trim();
+            model.ReleaseDate = this.view.MovieReleaseDate.Trim();
             model.Genre = this.view.MovieGenre;
             model.Image = "Test image url";
+            Console.WriteLine("Add movies");
             try
             {
                 new Utilities.ModelDataValidation().Validate(model);
+
                 if (view.IsEdit)
                 {
                     model.Id = Convert.ToInt32(view.MovieId);
@@ -152,6 +162,9 @@ namespace CinemaApp.Presenters
         {
             LoadAllMovieList();
         }
+
+
+
 
 
 

@@ -135,18 +135,12 @@ namespace CinemaApp.Presenters
                 {
                     if (TimeSpan.Parse(model.StartTime) >= TimeSpan.Parse(item.StartTime) && TimeSpan.Parse(model.StartTime) <= TimeSpan.Parse(item.EndTime))
                     {
-                        Console.WriteLine("Start time: " + model.StartTime);
-                        Console.WriteLine("End time: " + model.EndTime);
-                        Console.WriteLine("Start time of exist: " + item.StartTime);
-                        Console.WriteLine("End time of exist: " + item.EndTime);
+                        Console.WriteLine("Log 1");
                          throw new Exception("Room is not available at this time");
                     }
                     if (TimeSpan.Parse(model.EndTime) >= TimeSpan.Parse(item.StartTime) && TimeSpan.Parse(model.EndTime) <= TimeSpan.Parse(item.EndTime))
                     {
-                        Console.WriteLine("Start time: " + model.StartTime);
-                        Console.WriteLine("End time: " + model.EndTime);
-                        Console.WriteLine("Start time of exist: " + item.StartTime);
-                        Console.WriteLine("End time of exist: " + item.EndTime);
+                        Console.WriteLine("Log 2");
                         throw new Exception("Room is not available at this time");
                     }
                 }
@@ -158,14 +152,6 @@ namespace CinemaApp.Presenters
             try
             {
                 int movieId = 0;
-                //Console.WriteLine(view.Movie);
-                //foreach (var item in movieList)
-                //{
-                //    if (item.Title == view.Movie)
-                //    {
-                //        movieId = item.Id;
-                //    }
-                //}
                 movieId = int.Parse(view.Movie);
                 if (movieId == 0) throw new Exception("Movie not found");
 

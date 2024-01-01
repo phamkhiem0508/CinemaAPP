@@ -60,7 +60,7 @@ namespace CinemaApp.Models
                 genre = value;
             }
         }
-
+        
         [DisplayName("Movie Duration")]
         [Required(ErrorMessage = "Movie Duration is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Movie Duration can't be longer than 50 characters")]
@@ -78,7 +78,7 @@ namespace CinemaApp.Models
 
         [DisplayName("Movie Release Date")]
         [Required(ErrorMessage = "Movie Release Date is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Movie Release Date can't be longer than 50 characters")]
+        [StringLength(50, MinimumLength = 9, ErrorMessage = "Movie Release Date can't be longer than 50 characters")]
         public string ReleaseDate
         {
             get

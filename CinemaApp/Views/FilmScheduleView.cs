@@ -21,10 +21,12 @@ namespace CinemaApp.Views
         private bool isEdit = false;
         private string message = "";
 
-        public FilmScheduleView()
+        public FilmScheduleView(Form parent)
         {
             InitializeComponent();
-
+            this.MdiParent = parent;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Dock = DockStyle.Fill;
 
             tabFilmScheduleControl.TabPages.Remove(tabFilmScheduleDetail);
             btnClose.Click += delegate { this.Close(); };
@@ -72,7 +74,7 @@ namespace CinemaApp.Views
 
 
             //Save movie
-            btnSaveMovie.Click += delegate
+            btnSaveFilmSchedule.Click += delegate
             {
                 SaveFilmScheduleEvent?.Invoke(this, EventArgs.Empty);
                 MessageBox.Show(this.Message, "Add Movie", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -82,7 +84,6 @@ namespace CinemaApp.Views
             btnEditFilmSchedule.Click += delegate
             {
                 this.IsEdit = true;
-                CloseFormEvent?.Invoke(this, EventArgs.Empty);
                 tabFilmScheduleControl.TabPages.Remove(tabFilmScheduleList);
                 tabFilmScheduleControl.TabPages.Add(tabFilmScheduleDetail);
                 tabFilmScheduleControl.SelectedTab = tabFilmScheduleDetail;
@@ -119,7 +120,7 @@ namespace CinemaApp.Views
         public string Room { get => cbRoom.Text; set => cbRoom.Text = value; }
         public string Message { get => this.message; set => this.message = value; }
         public bool IsEdit { get => this.isEdit; set => this.isEdit = value; }
-        public string Movie { get => this?.cbMovie?.SelectedValue?.ToString() ; set => this.cbMovie.SelectedValue = value; }
+        public string Movie { get => this?.cbMovie?.SelectedValue?.ToString(); set => this.cbMovie.SelectedValue = value; }
         public string StartTime { get => txtFilmScheduleStartime.Text; set => txtFilmScheduleStartime.Text = value; }
         public string EndTime { get; set; }
         public int Id { get => this.id; set => this.id = value; }
@@ -153,7 +154,7 @@ namespace CinemaApp.Views
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new FilmScheduleView();
+                instance = new FilmScheduleView(parent);
                 instance.MdiParent = parent;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;

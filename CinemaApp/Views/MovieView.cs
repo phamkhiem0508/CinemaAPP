@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace CinemaApp.Views
 {
@@ -19,9 +20,14 @@ namespace CinemaApp.Views
         private string message = "";
 
         //Constructor
-        public MovieView()
+        public MovieView(Form parent)
         {
             InitializeComponent();
+
+            this.MdiParent = parent;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.Dock = DockStyle.Fill;
+
             PrepareAndRaiseEvent();
             tabMovieControl.TabPages.Remove(tabMovieDetail);
             btnClose.Click += delegate { this.Close(); };
@@ -69,7 +75,6 @@ namespace CinemaApp.Views
                 tabMovieControl.SelectedTab = tabMovieDetail;
                 tabMovieDetail.Text = "Edit Movie";
                 EditMovieEvent?.Invoke(this, EventArgs.Empty);
-                CancelSaveMovieEvent?.Invoke(this, EventArgs.Empty);
             };
 
             //Close movie detail
@@ -163,7 +168,7 @@ namespace CinemaApp.Views
         {
             if (instance == null || instance.IsDisposed)
             {
-                instance = new MovieView();
+                instance = new MovieView(parent);
                 instance.MdiParent = parent;
                 instance.FormBorderStyle = FormBorderStyle.None;
                 instance.Dock = DockStyle.Fill;
